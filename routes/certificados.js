@@ -2,8 +2,9 @@ const {Router} = require('express');
 
 const router = Router();
 
-const {alumnosGet} = require('../controllers/alumnos');
+const {certificadosGet, certificadoGet, certificadoPost} = require('../controllers/certificados');
 
-router.get('/', alumnosGet);
+router.get('/', certificadosGet);
+router.post('/', certificadoPost);
 
 module.exports = router;

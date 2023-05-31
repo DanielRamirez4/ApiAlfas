@@ -1,12 +1,7 @@
 const {request, response} = require('express')
 
-const alumnosGet = async(req = request, res = response) => {
-
-    const idAlumno = await  sreq.params.idAlumno;
-
-    console.log(req.params)
-
-    res.json(`aqui se mostraran todos los alumnos: ${idAlumno}`);
+const alumnosGet = (req = request, res = response) => {
+    res.json('ruta para obtener todos los alumnos');
 }
 
 const alumnoGet = async(req, res) => {

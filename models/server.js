@@ -1,7 +1,5 @@
 const express = require('express');
 const cors = require('cors');
-const multer = require('multer')
-// const body_parser = require('body-parser');
 
 class Server {
     constructor(){
@@ -24,13 +22,11 @@ class Server {
         this.app.use(express.json());
 
         this.app.use(express.urlencoded({extended: true}));
-
-        // this.app.use(multer().any());
     }
 
     routes(){
         this.app.use( this.paths.alumnos, require('../routes/alumnos'));
-        // this.app.use(this.paths.certificados, require(''));
+        this.app.use(this.paths.certificados, require('../routes/certificados'));
     }
 
     listen(){

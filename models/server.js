@@ -4,7 +4,7 @@ const cors = require('cors');
 class Server {
     constructor(){
         this.app = express();
-        this.port = 3000;
+        this.port = process.env.PORT;
 
         this.paths = {
             alumnos: '/api/alumnos',
@@ -18,9 +18,7 @@ class Server {
 
     middlewares(){
         this.app.use(cors());
-
         this.app.use(express.json());
-
         this.app.use(express.urlencoded({extended: true}));
     }
 
@@ -31,10 +29,9 @@ class Server {
 
     listen(){
         this.app.listen(this.port, () => {
-            console.log('Servidor corriendo en el puerto', 3000);
+            console.log('Servidor corriendo en el puerto', process.env.PORT || 3000);
         });
     }
-
 }
 
 module.exports = Server;

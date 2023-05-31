@@ -1,7 +1,7 @@
-const {request, response} = require('express')
+const connection = require('../database/config');
 
-const alumnosGet = (req = request, res = response) => {
-    res.json('ruta para obtener todos los alumnos');
+const alumnosGet = async(req, res) => {
+   res.json('ruta para obtener todos los alumnos');
 }
 
 const alumnoGet = async(req, res) => {

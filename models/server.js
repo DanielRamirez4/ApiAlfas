@@ -8,7 +8,8 @@ class Server {
 
         this.paths = {
             alumnos: '/api/alumnos',
-            certificados: '/api/certificados'
+            certificados: '/api/certificados',
+            productos: '/api/productos'
         };
 
         this.middlewares();
@@ -25,6 +26,7 @@ class Server {
     routes(){
         this.app.use( this.paths.alumnos, require('../routes/alumnos'));
         this.app.use(this.paths.certificados, require('../routes/certificados'));
+        this.app.use(this.paths.productos, require('../routes/productos'));
     }
 
     listen(){

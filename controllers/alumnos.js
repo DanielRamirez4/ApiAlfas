@@ -1,7 +1,16 @@
 const connection = require('../database/config');
 
 const alumnosGet = async(req, res) => {
-   res.json('ruta para obtener todos los alumnos'); 
+   //res.json('ruta para obtener todos los alumnos');
+   try {
+        connection.query('SELECT * FROM alumnos;', (err, results) => {
+            res.json(results);
+        });
+    } catch (error) {
+        console.log(error)
+}
+
+
 }
 
 const alumnoGet = async(req, res) => {

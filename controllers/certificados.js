@@ -12,7 +12,15 @@ const certificadosGet = (req, res) => {
 }
 
 const certificadoGet = async(req, res) => {
-    res.json('ruta para un certificado');
+    //res.json('ruta para un certificado');
+    try {
+        const {idPara} = req.params;
+        connection.query(`SELECT * FROM certificados WHERE id=${idPara}`,(err,results) => {
+            res.json(results);
+        });
+    } catch (error) {
+        console.log(error)
+    }
     
 }
 
